@@ -1,0 +1,11 @@
+package com.tesji.care
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class Api : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_api)
+    }
+}

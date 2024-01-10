@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "540298786219",
+    "project_id": "asistente-ana",
+    "storage_bucket": "asistente-ana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:540298786219:android:185bec1b890b0803aa8eee",
+        "android_client_info": {
+          "package_name": "com.tesji.care"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAddQ1rlWOd5_rojn0PnYw9re35Q0RZgMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
