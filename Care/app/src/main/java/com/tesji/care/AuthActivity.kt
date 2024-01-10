@@ -10,11 +10,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.tesji.care.databinding.ActivityApiBinding
-import okhttp3.Request
-import okio.Timeout
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 enum class ProviderType{
     Correo
@@ -26,42 +21,7 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityApiBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val datos = findViewById<Button>(R.id.python)
-        val retofitTraer = Retrofit.ConsumirApi.getTraer()
-        retofitTraer.enqueue(object : Call<empleados>{
-            override fun clone(): Call<empleados> {
-                TODO("Not yet implemented")
-            }
-
-            override fun execute(): Response<empleados> {
-                TODO("Not yet implemented")
-            }
-
-            override fun isExecuted(): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun cancel() {
-                TODO("Not yet implemented")
-            }
-
-            override fun isCanceled(): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun request(): Request {
-                TODO("Not yet implemented")
-            }
-
-            override fun timeout(): Timeout {
-                TODO("Not yet implemented")
-            }
-
-            override fun enqueue(callback: Callback<empleados>) {
-                TODO("Not yet implemented")
-            }
-
-        })
+        val retofitTraer = 
         setup()
     }
     private fun setup() {
