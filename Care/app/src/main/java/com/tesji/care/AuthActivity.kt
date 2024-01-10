@@ -21,7 +21,6 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityApiBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val retofitTraer = 
         setup()
     }
     private fun setup() {
