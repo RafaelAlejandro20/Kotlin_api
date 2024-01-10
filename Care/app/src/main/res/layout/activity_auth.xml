@@ -90,5 +90,10 @@
                 android:background="@drawable/btn_derecho">
             </Button>
         </LinearLayout>
+        <TextView
+            android:id="@+id/python"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
