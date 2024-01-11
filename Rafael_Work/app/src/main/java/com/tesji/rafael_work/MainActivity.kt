@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
         val service = retrofit.create(PostApi::class.java)
         lifecycleScope.launch {
             val response = service.getUserPost()
-            response.forEach(
+            response.forEach {
                 println(it)
-            )
+            }
         }
     }
 }
