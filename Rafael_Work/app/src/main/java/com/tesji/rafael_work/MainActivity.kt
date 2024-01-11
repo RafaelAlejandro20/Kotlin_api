@@ -34,15 +34,15 @@ class MainActivity : AppCompatActivity() {
 
         val service = retrofit.create(PostApi::class.java)
         lifecycleScope.launch {
-            val response = service.getUserPostById("1")
-            if(response.isSuccessful){
-                runOnUiThread {
+            //val response = service.getUserPostById("1")
+            /*if(response.isSuccessful){
+                /*runOnUiThread {
                     val json = findViewById<TextView>(R.id.json)
-                    json.text = "${response.body()?.Id} = ${response.body()?.Nombre}"
-                }
+                    json.text = "${response.body()?.Id} = ${response.body()?.Id}"
+                }*/
             }else{
                 Log.e("Error en Retrofit","${response.code()} - ${response.message()}")
-            }
+            }*/
         }
     }
 }
