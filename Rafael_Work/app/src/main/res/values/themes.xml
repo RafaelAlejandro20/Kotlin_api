@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Rafael_Work" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/cafe</item>
+        <item name="colorSecondary">@color/azul</item>
+    </style>
+
+    <style name="Theme.Rafael_Work" parent="Base.Theme.Rafael_Work" />
+</resources>
