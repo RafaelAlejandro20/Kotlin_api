@@ -2,6 +2,7 @@ package com.tesji.rafael_work
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
             response.forEach {
                 println(it)
             }
+            runOnUiThread {
+                val json = findViewById<TextView>(R.id.json)
+                json.text = response.first().Nombre
+            }
         }
+
     }
 }
