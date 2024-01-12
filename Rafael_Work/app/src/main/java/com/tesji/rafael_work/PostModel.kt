@@ -3,8 +3,8 @@ package com.tesji.rafael_work
 import com.google.gson.annotations.SerializedName
 
 data class PostModel (
-    @SerializedName("id")
+    @SerializedName("Id")
     var Id:Int,
-    @SerializedName("title")
+    @SerializedName("Nombre")
     var Nombre:String
 )

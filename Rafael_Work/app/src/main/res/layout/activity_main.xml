@@ -6,7 +6,24 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Malbored"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:background="@drawable/titulo">
+    </TextView>
+    <li
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20dp">
+    </TextView>
+    <TextView
+        android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
