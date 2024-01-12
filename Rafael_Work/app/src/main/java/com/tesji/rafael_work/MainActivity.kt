@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-    val urlBase = "https://rafaelalejandro.pythonanywhere.com/"
+    val urlBase = "https://jsonplaceholder.typicode.com/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        /*val service = retrofit.create(PostApi::class.java)
+        val service = retrofit.create(PostApi::class.java)
         lifecycleScope.launch {
             val response = service.getUserPost()
             response.forEach {
@@ -30,19 +30,6 @@ class MainActivity : AppCompatActivity() {
                 val json = findViewById<TextView>(R.id.json)
                 json.text = response.first().Nombre
             }
-        }*/
-
-        val service = retrofit.create(PostApi::class.java)
-        lifecycleScope.launch {
-            //val response = service.getUserPostById("1")
-            /*if(response.isSuccessful){
-                /*runOnUiThread {
-                    val json = findViewById<TextView>(R.id.json)
-                    json.text = "${response.body()?.Id} = ${response.body()?.Id}"
-                }*/
-            }else{
-                Log.e("Error en Retrofit","${response.code()} - ${response.message()}")
-            }*/
         }
     }
 }
