@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
@@ -57,16 +58,25 @@ class MainActivity : AppCompatActivity() {
         val service = retrofit.create(PostApi::class.java)
         lifecycleScope.launch {
             val response = service.getUserPostById(id)
+            val id = findViewById<TextView>(R.id.id)
+            val nombre = findViewById<TextView>(R.id.nombre)
             if(response.isSuccessful){
                 runOnUiThread {
-                    val id = findViewById<TextView>(R.id.id)
-                    val nombre = findViewById<TextView>(R.id.nombre)
                     id.text = "${response.body()?.Id}"
                     nombre.text = "${response.body()?.Nombre}"
+                    showAlert()
                 }
             }else{
-                Toast.makeText(applicationContext, "No existe ese valor", Toast.LENGTH_SHORT).show()
+                showAlert()
             }
         }
+    }
+    private fun showAlert() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage("Por favor comprueba lo valores ingresados.")
+        builder.setPositiveButton("Aceptar", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
     }
 }
