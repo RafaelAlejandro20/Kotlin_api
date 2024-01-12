@@ -14,7 +14,26 @@
         android:textColor="@color/white"
         android:background="@drawable/titulo">
     </TextView>
-    <li
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="buscar">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Buscar"
+        android:textColorHint="@color/white"
+        android:textSize="20sp">
+    </Button>
     <TextView
         android:id="@+id/id"
         android:layout_width="match_parent"

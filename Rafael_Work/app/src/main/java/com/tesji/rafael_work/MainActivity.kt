@@ -3,7 +3,10 @@ package com.tesji.rafael_work
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
@@ -14,6 +17,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val buscar_valor = findViewById<EditText>(R.id.buscar)
+        val boton = findViewById<Button>(R.id.boton)
+
+        boton.setOnClickListener {
+            buscar(buscar_valor.text.toString())
+        }
 
         mostrar()
     }
@@ -38,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun buscar(){
+    fun buscar(id:String){
         val retrofit = Retrofit.Builder()
             .baseUrl(urlBase)
             .addConverterFactory(GsonConverterFactory.create())
@@ -46,14 +56,16 @@ class MainActivity : AppCompatActivity() {
 
         val service = retrofit.create(PostApi::class.java)
         lifecycleScope.launch {
-            val response = service.getUserPostById("2")
+            val response = service.getUserPostById(id)
             if(response.isSuccessful){
                 runOnUiThread {
                     val id = findViewById<TextView>(R.id.id)
-                    id.text = "${response.body()?.Id} - ${response.body()?.Nombre}"
+                    val nombre = findViewById<TextView>(R.id.nombre)
+                    id.text = "${response.body()?.Id}"
+                    nombre.text = "${response.body()?.Nombre}"
                 }
             }else{
-                Log.e("Error retrofit","${response.code()} - ${response.message()}")
+                Toast.makeText(applicationContext, "No existe ese valor", Toast.LENGTH_SHORT).show()
             }
         }
     }
